@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAPAN TOP TOUR 3</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSSファイルをリンク -->
+</head>
+<body>
+    <div class="container">
+        <h1>JAPAN TOP TOUR 3 in 津山</h1>
+        <h2>↓対戦表は下から選択してね！↓</h2>
+            <div class="dropdown">
+            <button>カテゴリーを選択</button>
+            <div class="dropdown-content">
+                <a href="#" class="tab-link" data-tab="page1">MD+4.0</a>
+                <a href="#" class="tab-link" data-tab="page2">WD+4.0</a>
+                <a href="#" class="tab-link" data-tab="page3">MX+4.0</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="page1" class="tab-content">
+        <h1>MD+4.0</h1>
+        <div class="iframe-container">
+            <iframe src="MD+4.0.html"></iframe>
+        </div>
+    </div>
+    <div id="page2" class="tab-content">
+        <h1>WD+4.0</h1>
+        <div class="iframe-container">
+            <iframe src="WD+4.0.html"></iframe>
+        </div>
+    </div>
+    <div id="page3" class="tab-content">
+        <h1>MX+4.0</h1>
+        <div class="iframe-container">
+            <iframe src="MX+4.0.html"></iframe>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // デフォルトのリンク動作を無効化
+
+                // すべてのコンテンツを非表示
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                // 選択したコンテンツを表示
+                document.getElementById(this.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
